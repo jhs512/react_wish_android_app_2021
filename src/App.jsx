@@ -399,9 +399,17 @@ const HomeMainPage = ({ history }) => {
 
 const SwiperSlider = React.memo(
   ({ className, style, swiperOptions, children }) => {
-    className ??= "";
-    swiperOptions ??= {};
-    style ??= {};
+    if (!className) {
+      className = "";
+    }
+
+    if (!swiperOptions) {
+      swiperOptions = {};
+    }
+
+    if (!style) {
+      style = {};
+    }
 
     console.log("SwiperSlider, 실행!");
 
